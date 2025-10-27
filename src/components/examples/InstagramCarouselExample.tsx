@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { VideoModal } from "@/components/ui/video-modal" // Certifique-se que este caminho está correto
-import InstagramVideoCarousel from "@/components/ui/InstagramVideoCarousel"
+import { useState } from 'react'
+import InstagramVideoCarousel from '@/components/ui/InstagramVideoCarousel'
+import { VideoModal } from '@/components/ui/video-modal'
 
-const instagramReels = [
+const exampleVideos = [
   {
     id: 1,
     title: "Como funciona o exame de sangue",
@@ -41,10 +41,10 @@ const instagramReels = [
   }
 ]
 
-const InstagramSection = () => {
+const InstagramCarouselExample = () => {
   const [selectedVideo, setSelectedVideo] = useState<{src: string, title: string} | null>(null)
 
-  const handleVideoClick = (video: typeof instagramReels[0]) => {
+  const handleVideoClick = (video: typeof exampleVideos[0]) => {
     setSelectedVideo({ src: video.videoSrc, title: video.title })
   }
 
@@ -55,7 +55,10 @@ const InstagramSection = () => {
   return (
     <>
       <InstagramVideoCarousel
-        videos={instagramReels}
+        videos={exampleVideos}
+        title="Siga @lab_anacli"
+        subtitle="ACOMPANHE NOSSO DIA A DIA E FIQUE\nPOR DENTRO DAS NOVIDADES"
+        instagramUrl="https://instagram.com/lab_anacli"
         onVideoClick={handleVideoClick}
       />
 
@@ -70,4 +73,4 @@ const InstagramSection = () => {
   )
 }
 
-export default InstagramSection
+export default InstagramCarouselExample
