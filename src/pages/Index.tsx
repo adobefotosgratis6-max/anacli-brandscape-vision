@@ -1,13 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import CertificatesSection from "@/components/sections/CertificatesSection";
 import MissionSection from "@/components/sections/MissionSection";
-import ExpertiseSection from "@/components/sections/ExpertiseSection";
-import InfrastructureSection from "@/components/sections/InfrastructureSection";
-import PartnershipsSection from "@/components/sections/PartnershipsSection";
-import CertificationsSection from "@/components/sections/CertificationsSection";
-import HumanCareSection from "@/components/sections/HumanCareSection";
+import ConveniosSection from "@/components/sections/ConveniosSection";
+import HybridBentoSection from "@/components/sections/HybridBentoSection";
 import NewsSection from "@/components/sections/NewsSection";
+import InstagramSection from "@/components/sections/InstagramSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FinalStatementSection from "@/components/sections/FinalStatementSection";
 
@@ -17,13 +16,12 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <CertificatesSection />
         <MissionSection />
-        <ExpertiseSection />
-        <InfrastructureSection />
-        <PartnershipsSection />
-        <CertificationsSection />
-        <HumanCareSection />
+        <ConveniosSection />
+        <HybridBentoSection />
         <NewsSection />
+        <InstagramSection />
         <ContactSection />
         <FinalStatementSection />
       </main>

@@ -1,70 +1,180 @@
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const news = [
   {
     title: "Anacli amplia portfólio de exames genéticos",
     date: "15 de Janeiro, 2025",
-    summary: "Novos testes moleculares disponíveis para diagnóstico de doenças hereditárias.",
+    summary: "Novos testes moleculares disponíveis para diagnóstico de doenças hereditárias com tecnologia de ponta.",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
+    category: "Inovação",
+    readTime: "3 min"
   },
   {
     title: "Novo horário de atendimento aos sábados",
     date: "10 de Janeiro, 2025",
-    summary: "Estendemos nosso horário para oferecer mais conveniência aos pacientes.",
+    summary: "Estendemos nosso horário para oferecer mais conveniência aos pacientes que precisam de flexibilidade.",
+    image: "https://images.unsplash.com/photo-1600373240065-4572ee4a9a8e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+    category: "Atendimento",
+    readTime: "2 min"
   },
   {
     title: "Certificação PALC renovada",
     date: "05 de Janeiro, 2025",
-    summary: "Anacli renova certificação de excelência em análises clínicas.",
+    summary: "Anacli renova certificação de excelência em análises clínicas, reafirmando nosso compromisso com a qualidade.",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop&crop=center",
+    category: "Qualidade",
+    readTime: "4 min"
   },
 ];
 
 const NewsSection = () => {
   return (
-    <section className="section-spacing bg-gradient-olive-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="mb-4">Notícias e atualizações.</h2>
-          <div className="w-16 h-1 bg-primary mx-auto" />
-        </div>
+    <section className="relative py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, #A6C022 2px, transparent 2px),
+                           radial-gradient(circle at 75% 75%, #FF0068 2px, transparent 2px)`,
+          backgroundSize: '80px 80px'
+        }}></div>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Notícias e &nbsp;
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              Atualizações
+            </span>
+          </motion.h2>
+
+          <motion.div
+            className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"
+            initial={{ width: 0 }}
+            whileInView={{ width: "6rem" }}
+            transition={{ duration: 1, delay: 0.4 }}
+            viewport={{ once: true }}
+          />
+
+          <motion.p
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Fique por dentro das últimas novidades, inovações e melhorias em nossos serviços
+          </motion.p>
+        </motion.div>
+
+        {/* News Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {news.map((item, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group hover-lift border-border/50 hover:border-primary/50 hover:shadow-elegant transition-all duration-300 bg-white overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group h-full"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
             >
-              <CardContent className="p-0">
-                <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center">
-                  <Calendar className="h-12 w-12 text-primary/30" />
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wider">
-                    <Calendar className="h-3.5 w-3.5" />
-                    {item.date}
+              <Card className="h-full flex flex-col overflow-hidden border border-gray-200 hover:border-accent transition-all duration-300 bg-white">
+                <CardContent className="p-0 flex flex-col h-full">
+                  {/* Image */}
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+
+                    {/* Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-sm text-gray-800 border border-white/20">
+                        {item.category}
+                      </span>
+                    </div>
+
+                    {/* Read Time */}
+                    <div className="absolute top-4 right-4">
+                      <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-black/20 backdrop-blur-sm text-white">
+                        <Clock className="h-3 w-3" />
+                        {item.readTime}
+                      </span>
+                    </div>
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-foreground/70 leading-relaxed">
-                    {item.summary}
-                  </p>
-                  
-                  <div className="pt-2">
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-4 transition-all">
-                      Ler mais
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
+
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    {/* Date */}
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                      <Calendar className="h-4 w-4 text-primary" />
+                      {item.date}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 leading-tight mb-4">
+                      {item.title}
+                    </h3>
+
+                    {/* Summary */}
+                    <p className="text-gray-600 leading-relaxed flex-grow mb-6">
+                      {item.summary}
+                    </p>
+
+                    {/* Read More Button */}
+                    <div className="mt-auto">
+                      <motion.button
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-all duration-300 group/btn"
+                        whileHover={{ x: 4 }}
+                      >
+                        Ler mais
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                      </motion.button>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
+
+        {/* View All Button */}
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Ver todas as notícias
+            <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
