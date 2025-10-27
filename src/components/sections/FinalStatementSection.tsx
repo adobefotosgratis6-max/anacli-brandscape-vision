@@ -41,10 +41,10 @@ const FinalStatementSection = () => {
             Pronto para cuidar da sua saúde?
           </h3>
           <p className="text-gray-600 mb-6">
-            Entre em contato conosco e agende seus exames com a qualidade e confiança 
+            Entre em contato conosco e agende seus exames com a qualidade e confiança
             que você merece.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.a
               href="tel:+5575999999999"
@@ -55,7 +55,7 @@ const FinalStatementSection = () => {
               <Phone className="w-5 h-5" />
               Ligar Agora
             </motion.a>
-            
+
             <motion.a
               href="#contato"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border border-gray-300 hover:bg-gray-50 transition-all duration-300"
@@ -77,9 +77,9 @@ const FinalStatementSection = () => {
           viewport={{ once: true }}
         >
           <div className="flex justify-center mb-4">
-            <img 
-              src="/src/assets/logo02.svg" 
-              alt="Anacli Laboratório" 
+            <img
+              src="/assets/logo02.svg"
+              alt="Anacli Laboratório"
               className="h-16 w-auto"
             />
           </div>

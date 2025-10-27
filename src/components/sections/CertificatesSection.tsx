@@ -4,22 +4,22 @@ const certificates = [
   {
     name: "ISO 9001",
     description: "Sistema de Gestão da Qualidade",
-    logo: "/src/assets/certificados/ISO.svg"
+    logo: "/assets/certificados/ISO.svg"
   },
   {
     name: "DICQ",
     description: "Departamento de Inspeção e Controle da Qualidade",
-    logo: "/src/assets/certificados/DICQ.svg"
+    logo: "/assets/certificados/DICQ.svg"
   },
   {
     name: "PNCQ",
     description: "Programa Nacional de Controle de Qualidade",
-    logo: "/src/assets/certificados/PNCQ.svg"
+    logo: "/assets/certificados/PNCQ.svg"
   },
   {
     name: "PREVECAL",
     description: "Programa de Verificação Externa da Qualidade",
-    logo: "/src/assets/certificados/PREVECAL.svg"
+    logo: "/assets/certificados/PREVECAL.svg"
   }
 ];
 

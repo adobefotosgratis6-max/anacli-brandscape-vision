@@ -105,7 +105,7 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
               transition={{ duration: 0.2 }}
             >
               <img
-                src="/src/assets/logo.svg"
+                src="/assets/logo.svg"
                 alt="Anacli Laboratorial"
                 className="h-8 md:h-10 w-auto"
               />

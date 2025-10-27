@@ -5,30 +5,30 @@ import { ArrowRight } from "lucide-react";
 
 // Primeira fileira - vai da esquerda para direita
 const conveniosFileira1 = [
-  { name: "Amil", logo: "/src/assets/convenios/Amil.webp" },
-  { name: "Hapvida", logo: "/src/assets/convenios/hapvida.webp" },
-  { name: "Geap", logo: "/src/assets/convenios/Geap.webp" },
-  { name: "Blue Med", logo: "/src/assets/convenios/Blue.webp" },
-  { name: "Camed", logo: "/src/assets/convenios/Camed.webp" },
-  { name: "Fusex", logo: "/src/assets/convenios/Fusex.webp" },
-  { name: "Planserv", logo: "/src/assets/convenios/planserv.webp" },
-  { name: "Saúde Caixa", logo: "/src/assets/convenios/SaudeCaixa.webp" },
-  { name: "Sanitas", logo: "/src/assets/convenios/Sanitas.webp" },
-  { name: "Promedica", logo: "/src/assets/convenios/Promedica.webp" },
+  { name: "Amil", logo: "/assets/convenios/Amil.webp" },
+  { name: "Hapvida", logo: "/assets/convenios/hapvida.webp" },
+  { name: "Geap", logo: "/assets/convenios/Geap.webp" },
+  { name: "Blue Med", logo: "/assets/convenios/Blue.webp" },
+  { name: "Camed", logo: "/assets/convenios/Camed.webp" },
+  { name: "Fusex", logo: "/assets/convenios/Fusex.webp" },
+  { name: "Planserv", logo: "/assets/convenios/planserv.webp" },
+  { name: "Saúde Caixa", logo: "/assets/convenios/SaudeCaixa.webp" },
+  { name: "Sanitas", logo: "/assets/convenios/Sanitas.webp" },
+  { name: "Promedica", logo: "/assets/convenios/Promedica.webp" },
 ];
 
 // Segunda fileira - vai da direita para esquerda
 const conveniosFileira2 = [
-  { name: "Select", logo: "/src/assets/convenios/Select.webp" },
-  { name: "Bem Estar Saúde", logo: "/src/assets/convenios/bemstar saude.webp" },
-  { name: "Atitude Saúde", logo: "/src/assets/convenios/atitudesaude.webp" },
-  { name: "Plan Assiste", logo: "/src/assets/convenios/plan assiste.webp" },
-  { name: "Pro Social", logo: "/src/assets/convenios/pro social.webp" },
-  { name: "Nordeste Saúde", logo: "/src/assets/convenios/NordesteSaudeEmpresarial.webp" },
-  { name: "ArcelorMittal", logo: "/src/assets/convenios/arcelormittal.webp" },
-  { name: "ASFEB", logo: "/src/assets/convenios/asfeb.webp" },
-  { name: "FACEHSF", logo: "/src/assets/convenios/facehsf.webp" },
-  { name: "Amex", logo: "/src/assets/convenios/Amex.webp" },
+  { name: "Select", logo: "/assets/convenios/Select.webp" },
+  { name: "Bem Estar Saúde", logo: "/assets/convenios/bemstar saude.webp" },
+  { name: "Atitude Saúde", logo: "/assets/convenios/atitudesaude.webp" },
+  { name: "Plan Assiste", logo: "/assets/convenios/plan assiste.webp" },
+  { name: "Pro Social", logo: "/assets/convenios/pro social.webp" },
+  { name: "Nordeste Saúde", logo: "/assets/convenios/NordesteSaudeEmpresarial.webp" },
+  { name: "ArcelorMittal", logo: "/assets/convenios/arcelormittal.webp" },
+  { name: "ASFEB", logo: "/assets/convenios/asfeb.webp" },
+  { name: "FACEHSF", logo: "/assets/convenios/facehsf.webp" },
+  { name: "Amex", logo: "/assets/convenios/Amex.webp" },
 ];
 
 const ConveniosSection = () => {

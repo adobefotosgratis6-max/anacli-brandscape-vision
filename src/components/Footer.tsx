@@ -47,22 +47,22 @@ const Footer = () => {
   const certificates = [
     {
       name: "ISO 9001",
-      image: "/src/assets/certificados/ISO.svg",
+      image: "/assets/certificados/ISO.svg",
       alt: "Certificação ISO 9001"
     },
     {
       name: "DICQ",
-      image: "/src/assets/certificados/DICQ.svg",
+      image: "/assets/certificados/DICQ.svg",
       alt: "Certificação DICQ"
     },
     {
       name: "PNCQ",
-      image: "/src/assets/certificados/PNCQ.svg",
+      image: "/assets/certificados/PNCQ.svg",
       alt: "Certificação PNCQ"
     },
     {
       name: "PREVECAL",
-      image: "/src/assets/certificados/PREVECAL.svg",
+      image: "/assets/certificados/PREVECAL.svg",
       alt: "Certificação PREVECAL"
     }
   ];
@@ -75,7 +75,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="mb-4">
               <img
-                src="/src/assets/logo.svg"
+                src="/assets/logo.svg"
                 alt="Anacli - Laboratório de Análises Clínicas"
                 className="h-12 w-auto mb-2"
               />
@@ -119,7 +119,7 @@ const Footer = () => {
             <div className="flex-shrink-0">
               <div className="inline-flex items-center gap-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl p-6 border border-white/10">
                 <img
-                  src="/src/assets/certificados/GPTW.svg"
+                  src="/assets/certificados/GPTW.svg"
                   alt="Great Place to Work"
                   className="w-24 h-16 object-contain"
                 />

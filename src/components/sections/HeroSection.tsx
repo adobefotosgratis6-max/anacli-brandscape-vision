@@ -175,7 +175,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="/src/assets/unidade.jpg"
+                  src="/assets/unidade.jpg"
                   alt="Fachada do Laboratório Lapac"
                   className="w-full h-full object-cover"
                 />
@@ -232,7 +232,7 @@ const HeroSection = () => {
               transition={{ duration: 0.3 }}
             >
               <img
-                src="/src/assets/teste.png"
+                src="/assets/teste.png"
                 alt="Interior do Laboratório Lapac"
                 className="w-full h-full object-cover"
               />
