@@ -23,7 +23,7 @@ const locations = [
     phone: "(75) 3030-0030",
     email: "contato@anacli.com.br",
     hours: "Seg - Sex: 6h às 18h | Sáb: 6h às 12h",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=300&fit=crop&crop=center",
+    image: "/src/assets/unidade.jpg",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5234567890123!2d-38.9667890!3d-12.2547890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDE1JzE3LjIiUyAzOMKwNTgnMDAuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr",
     whatsapp: "5575999999999"
   },
@@ -34,7 +34,7 @@ const locations = [
     phone: "(75) 3030-0031",
     email: "toxico@anacli.com.br",
     hours: "Seg - Sex: 7h às 17h | Sáb: 7h às 12h",
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&h=300&fit=crop&crop=center",
+    image: "https://scontent-bsb1-1.cdninstagram.com/v/t39.30808-6/460718524_18340340380125231_4992479416768458381_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=102&ig_cache_key=MzQ2MDUyNDQ0MzUzOTM2MTI0Ng%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5oZHIuQzIifQ%3D%3D&_nc_ohc=PE7-bJKAhDkQ7kNvwH4Lqt-&_nc_oc=AdlPgbZ3tqFCZjU5jB4AxSHcfndEy4GredrYdxjgyLhzauvHrgVDWF_A4OkIdpklaqI_yIj4ugaB4_7uHpD1Ooyi&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bsb1-1.cdninstagram.com&_nc_gid=wawzJTDAOxfSuA7nKrmwrg&oh=00_Afc9rO95j2msebhUbCm400CRs_q5e67BErMs-iVzHSyPNQ&oe=6905BD2A",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1234567890123!2d-38.9567890!3d-12.2647890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDE1JzUyLjciUyAzOMKwNTcnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr",
     whatsapp: "5575888888888"
   },
@@ -173,7 +173,7 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            Encontre a unidade mais próxima de você e agende seus exames com facilidade
+            Encontre a unidade mais próxima de você e agende seus exames.
           </motion.p>
         </motion.div>
 
@@ -189,7 +189,7 @@ const ContactSection = () => {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="bg-white rounded-2xl border border-gray-200 hover:border-accent transition-all duration-300 overflow-hidden">
+              <div className="bg-white rounded-2xl border border-gray-200 hover:border-primary transition-all duration-300 overflow-hidden">
                 {/* Unit Image */}
                 <div className="relative h-32 overflow-hidden">
                   <img

@@ -57,7 +57,7 @@ const InstagramCarouselExample = () => {
       <InstagramVideoCarousel
         videos={exampleVideos}
         title="Siga @lab_anacli"
-        subtitle="ACOMPANHE NOSSO DIA A DIA E FIQUE\nPOR DENTRO DAS NOVIDADES"
+        subtitle="Acompanhe nosso dia a dia e fique por dentro das novidades."
         instagramUrl="https://instagram.com/lab_anacli"
         onVideoClick={handleVideoClick}
       />

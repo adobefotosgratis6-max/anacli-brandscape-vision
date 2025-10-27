@@ -34,17 +34,17 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     // Initial check
     handleResize();
-    
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
@@ -99,14 +99,14 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
         <div className="container mx-auto px-6">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <motion.div 
+            <motion.div
               className="flex items-center gap-3"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <img 
-                src="/src/assets/logo.svg" 
-                alt="Anacli Laboratorial" 
+              <img
+                src="/src/assets/logo.svg"
+                alt="Anacli Laboratorial"
                 className="h-8 md:h-10 w-auto"
               />
               <div className="flex flex-col">

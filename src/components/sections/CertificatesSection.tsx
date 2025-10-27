@@ -38,7 +38,7 @@ const CertificatesSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Main Layout: Text Left, Logos Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-          
+
           {/* Left Side - Text Content */}
           <motion.div
             className="space-y-6"
@@ -68,7 +68,7 @@ const CertificatesSection = () => {
               transition={{ duration: 1, delay: 0.4 }}
               viewport={{ once: true }}
             />
-            
+
             <motion.p
               className="text-lg text-gray-600 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ const CertificatesSection = () => {
                     className="w-12 h-12 lg:w-14 lg:h-14 object-contain filter group-hover:brightness-110 transition-all duration-300"
                     style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7471%) hue-rotate(326deg) brightness(106%) contrast(143%)' }}
                   />
-                  
+
                   {/* Glow effect */}
                   <motion.div
                     className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
