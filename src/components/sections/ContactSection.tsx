@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail, Clock, Map } from "lucide-react";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 
 // WhatsApp Icon Component
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -256,13 +256,15 @@ const ContactSection = () => {
                     {/* Maps Modal */}
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className="flex-1 border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                        <HierarchicalButton
+                          hierarchy="tertiary"
+                          size="md"
+                          icon={<Map className="h-4 w-4" />}
+                          iconPosition="left"
+                          className="flex-1"
                         >
-                          <Map className="h-4 w-4 mr-2" />
                           Ver no Maps
-                        </Button>
+                        </HierarchicalButton>
                       </DialogTrigger>
                       <DialogContent className="max-w-4xl w-full">
                         <DialogHeader>
@@ -293,14 +295,17 @@ const ContactSection = () => {
                       </DialogContent>
                     </Dialog>
 
-                    {/* WhatsApp Button */}
-                    <Button
-                      className="flex-1 bg-green-500 hover:bg-green-600 text-white transition-all duration-300 shadow-md hover:shadow-lg"
-                      onClick={() => window.open(`https://wa.me/${location.whatsapp}?text=Olá! Gostaria de mais informações sobre os serviços da ${location.name}.`, '_blank')}
+                    {/* WhatsApp Button - Ação principal */}
+                    <HierarchicalButton
+                      hierarchy="primary"
+                      size="md"
+                      icon={<WhatsAppIcon className="h-4 w-4" />}
+                      iconPosition="left"
+                      className="flex-1 bg-green-500 hover:bg-green-600 focus:ring-green-500"
+                      onClick={() => window.open('https://api.whatsapp.com/send?phone=557530300030&text=Ol%C3%A1.%20Vim%20atrav%C3%A9s%20do%20site%20e%20desejo%20agendar%20um%20atendimento.', '_blank')}
                     >
-                      <WhatsAppIcon className="h-4 w-4 mr-2" />
                       WhatsApp
-                    </Button>
+                    </HierarchicalButton>
                   </div>
                 </div>
               </div>

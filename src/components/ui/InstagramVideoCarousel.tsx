@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import { Instagram, ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import type { Swiper as SwiperType } from 'swiper'
+import { HierarchicalButton } from "@/components/ui/hierarchical-button"
 
 // Import Swiper styles
 import 'swiper/css'
@@ -100,41 +101,39 @@ const InstagramVideoCarousel = ({
 
           {/* Navigation Buttons */}
           <div className="flex items-center gap-4">
-            <button
+            <HierarchicalButton
+              hierarchy="tertiary"
+              size="md"
+              icon={<ChevronLeft className="w-6 h-6" />}
               onClick={handlePrevClick}
-              type="button"
-              className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 transform ${isBeginning
-                ? 'bg-gray-200 text-gray-400 opacity-50 cursor-not-allowed'
-                : 'bg-gray-300 text-black hover:bg-primary hover:text-white hover:scale-105 active:scale-95'
-                }`}
-              aria-label="Slide anterior"
               disabled={isBeginning}
+              className="w-14 h-14 rounded-full p-0"
             >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
+              <span className="sr-only">Anterior</span>
+            </HierarchicalButton>
 
-            <button
+            <HierarchicalButton
+              hierarchy="tertiary"
+              size="md"
+              icon={<ChevronRight className="w-6 h-6" />}
               onClick={handleNextClick}
-              type="button"
-              className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 transform ${isEnd
-                ? 'bg-gray-200 text-gray-400 opacity-50 cursor-not-allowed'
-                : 'bg-gray-300 text-black hover:bg-primary hover:text-white hover:scale-105 active:scale-95'
-                }`}
-              aria-label="Próximo slide"
               disabled={isEnd}
+              className="w-14 h-14 rounded-full p-0"
             >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+              <span className="sr-only">Próximo</span>
+            </HierarchicalButton>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+          <HierarchicalButton
+            hierarchy="primary"
+            size="lg"
+            icon={<Instagram className="w-5 h-5" />}
+            iconPosition="left"
+            className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 focus:ring-pink-500"
             onClick={() => window.open(instagramUrl, '_blank')}
           >
-            <Instagram className="w-5 h-5" />
             Seguir no Instagram
-          </button>
+          </HierarchicalButton>
         </div>
 
         {/* Right Column */}

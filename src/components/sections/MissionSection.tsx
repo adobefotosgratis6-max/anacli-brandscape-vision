@@ -171,10 +171,10 @@ const MissionSection = () => {
                   Tipos de Exames
                 </div>
                 <div className="text-base text-gray-600 leading-relaxed mb-6">
-                  Volume crescente de confiança dos pacientes em nossa expertise
+                  Um portfólio completo para um diagnóstico preciso.
                 </div>
                 <div className="text-sm text-primary/70 font-medium">
-                  Crescimento de 15% ao ano
+                  Precisão e dedicação à sua saúde
                 </div>
               </div>
             </motion.div>
@@ -238,7 +238,7 @@ const MissionSection = () => {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 group-hover:border-primary/20 h-full min-h-[140px] flex items-center justify-center">
+              <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8  group-hover:shadow-xl transition-all duration-300 border border-gray-200 group-hover:border-primary/20 h-full min-h-[140px] flex items-center justify-center">
                 <div className="flex items-center gap-6">
                   <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <Zap className="w-8 h-8 text-primary-foreground" />
@@ -267,7 +267,7 @@ const MissionSection = () => {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 group-hover:border-accent/20 h-full min-h-[140px]">
+              <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 group-hover:shadow-xl transition-all duration-300 border border-gray-200 group-hover:border-accent/20 h-full min-h-[140px]">
                 <div className="w-12 h-12 mb-4 rounded-xl bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
@@ -311,9 +311,6 @@ const MissionSection = () => {
                       <span className="text-sm bg-accent/20 text-accent px-3 py-1 rounded-full font-medium">
                         DICQ
                       </span>
-                      <span className="text-sm bg-accent/20 text-accent px-3 py-1 rounded-full font-medium">
-                        PNCQ
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -345,7 +342,7 @@ const MissionSection = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-wrap justify-center gap-4"
+              className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-3 md:gap-4 max-w-lg md:max-w-none mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
@@ -354,7 +351,7 @@ const MissionSection = () => {
               {["Precisão", "Agilidade", "Confiabilidade", "Humanização"].map((tag, index) => (
                 <motion.span
                   key={index}
-                  className="px-6 py-3 bg-white rounded-full text-primary font-semibold shadow-md"
+                  className="px-2 py-3 md:px-6 bg-white rounded-full text-primary font-semibold shadow-md text-center text-sm md:text-base"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

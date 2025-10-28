@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone } from "lucide-react";
+import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 
 const FinalStatementSection = () => {
   return (
@@ -46,25 +47,25 @@ const FinalStatementSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.a
-              href="tel:+5575999999999"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <HierarchicalButton
+              hierarchy="primary"
+              size="lg"
+              icon={<Phone className="w-5 h-5" />}
+              iconPosition="left"
+              onClick={() => window.open('https://api.whatsapp.com/send?phone=557530300030&text=Ol%C3%A1.%20Vim%20atrav%C3%A9s%20do%20site%20e%20desejo%20agendar%20um%20atendimento.', '_blank')}
             >
-              <Phone className="w-5 h-5" />
               Ligar Agora
-            </motion.a>
+            </HierarchicalButton>
 
-            <motion.a
-              href="#contato"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border border-gray-300 hover:bg-gray-50 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <HierarchicalButton
+              hierarchy="tertiary"
+              size="lg"
+              icon={<MapPin className="w-5 h-5" />}
+              iconPosition="left"
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <MapPin className="w-5 h-5" />
               Ver Localização
-            </motion.a>
+            </HierarchicalButton>
           </div>
         </motion.div>
 
@@ -80,11 +81,12 @@ const FinalStatementSection = () => {
             <img
               src="/assets/logo02.svg"
               alt="Anacli Laboratório"
-              className="h-16 w-auto"
+              className="h-24 w-auto"
             />
           </div>
           <div className="text-sm text-gray-500 tracking-wider">
-            Laboratório de Análises Clínicas
+            Excelência em Análises Clínicas
+
           </div>
         </motion.div>
       </div>

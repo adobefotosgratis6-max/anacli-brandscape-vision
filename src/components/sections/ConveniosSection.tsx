@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Marquee from "@/components/ui/marquee";
 import { CleanButton } from "@/components/ui/clean-button";
+import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 import { ArrowRight } from "lucide-react";
 
 // Primeira fileira - vai da esquerda para direita
@@ -65,7 +66,7 @@ const ConveniosSection = () => {
           />
         </motion.div>
 
-        <div className="-space-y-10">
+        <div className="-space-y-14">
           {/* Primeira fileira - Esquerda para Direita */}
           <div className="relative overflow-hidden" style={{
             maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
@@ -87,7 +88,7 @@ const ConveniosSection = () => {
               {conveniosFileira1.map((convenio, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center justify-center mx-2 bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+                  className="flex items-center justify-center mx-0 bg-white rounded-xl p-8 shadow-sm border border-gray-100"
                   whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -126,7 +127,7 @@ const ConveniosSection = () => {
               {conveniosFileira2.map((convenio, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center justify-center mx-2 bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+                  className="flex items-center justify-center mx-0 bg-white rounded-xl p-8 shadow-sm border border-gray-100"
                   whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -152,14 +153,14 @@ const ConveniosSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <CleanButton
-            variant="outline"
+          <HierarchicalButton
+            hierarchy="tertiary"
             size="lg"
             icon={<ArrowRight className="w-4 h-4" />}
-            className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+            iconPosition="right"
           >
             Ver todos os Convênios
-          </CleanButton>
+          </HierarchicalButton>
         </motion.div>
       </div>
     </section>

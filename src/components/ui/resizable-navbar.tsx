@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
@@ -58,7 +59,7 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
         <div className="container mx-auto px-6 py-2">
           <div className="flex items-center justify-between text-sm text-white">
             <div className="flex items-center gap-6">
-              <a href="tel:7530300030" className="flex items-center gap-2 hover:text-white/80 transition-colors">
+              <a href="https://api.whatsapp.com/send?phone=557530300030&text=Ol%C3%A1.%20Vim%20atrav%C3%A9s%20do%20site%20e%20desejo%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white/80 transition-colors">
                 <Phone className="h-3.5 w-3.5" />
                 (75) 3030-0030
               </a>
@@ -99,10 +100,15 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
         <div className="container mx-auto px-6">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <motion.div
-              className="flex items-center gap-3"
+            <motion.a
+              href="#"
+              className="flex items-center gap-3 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
             >
               <img
                 src="/assets/logo.svg"
@@ -110,11 +116,11 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
                 className="h-8 md:h-10 w-auto"
               />
               <div className="flex flex-col">
-                <span className="text-xs tracking-wide text-primary/80 hidden sm:block">
+                <span className="text-xs tracking-wide text-black/60 hidden sm:block select-none">
                   Excelência em Análises Clínicas
                 </span>
               </div>
-            </motion.div>
+            </motion.a>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
@@ -130,14 +136,13 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                 </motion.a>
               ))}
-              <motion.a
-                href="#resultados"
-                className="text-sm font-semibold px-4 py-2 rounded-full bg-accent text-white hover:bg-accent/90 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+              <HierarchicalButton
+                hierarchy="secondary"
+                size="sm"
+                onClick={() => window.open("http://anacli.ddns.com.br:8090/web_laudos/login.asp")}
               >
                 Resultados de Exames
-              </motion.a>
+              </HierarchicalButton>
             </div>
 
             {/* Mobile Menu Button */}
@@ -149,7 +154,7 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-foreground hover:text-primary transition-colors duration-300"
+                className="text-foreground hover:text-white transition-colors duration-300"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
                 {isMobileMenuOpen ? (
@@ -166,7 +171,7 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="lg:hidden border-t border-border/50 bg-white/95 backdrop-blur-md"
+              className="lg:hidden border-t border-b border-border/100 bg-white/95 backdrop-blur-md"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -186,21 +191,31 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
                     {item.name}
                   </motion.a>
                 ))}
-                <motion.a
-                  href="#resultados"
-                  className="text-sm font-semibold text-primary hover:text-primary-dark transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.1 }}
+                  className="mt-2"
                 >
-                  Resultados de Exames
-                </motion.a>
+                  <HierarchicalButton
+                    hierarchy="secondary"
+                    size="md"
+                    fullWidth={true}
+                    className="bg-accent hover:bg-accent/90 text-white focus:ring-accent"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.open("http://anacli.ddns.com.br:8090/web_laudos/login.asp");
+                    }}
+                  >
+                    Resultados de Exames
+                  </HierarchicalButton>
+                </motion.div>
               </nav>
             </motion.div>
           )}
         </AnimatePresence>
       </motion.nav>
+
     </div>
   );
 };

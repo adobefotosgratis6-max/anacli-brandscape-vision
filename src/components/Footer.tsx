@@ -68,23 +68,30 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white border-t border-primary/20">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white border-t border-primary/20 rounded-t-[20px] md:rounded-t-[40px] lg:rounded-t-[64px]">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
+            <a
+              href="#"
+              className="inline-block mb-4 cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
               <img
                 src="/assets/logo.svg"
                 alt="Anacli - Laboratório de Análises Clínicas"
-                className="h-12 w-auto mb-2"
+                className="h-12 w-auto mb-2 hover:opacity-80 transition-opacity"
               />
-              <div className="text-xs text-gray-400 tracking-wide">
+              <div className="text-xs text-gray-400 tracking-wide select-none">
                 Excelência em Análises Clínicas
               </div>
-            </div>
+            </a>
             <p className="text-sm text-gray-300 leading-relaxed">
-              Mais de 20 anos de compromisso com a ciência, a ética e o cuidado humano.
+              Mais de 50 anos de compromisso com a ciência, a ética e o cuidado humano.
             </p>
           </div>
 

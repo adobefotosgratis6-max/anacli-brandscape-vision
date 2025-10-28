@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 
 const news = [
   {
@@ -143,13 +144,14 @@ const NewsSection = () => {
 
                     {/* Read More Button */}
                     <div className="mt-auto">
-                      <motion.button
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-all duration-300 group/btn"
-                        whileHover={{ x: 4 }}
+                      <HierarchicalButton
+                        hierarchy="ghost"
+                        size="sm"
+                        icon={<ArrowRight className="h-4 w-4" />}
+                        iconPosition="right"
                       >
                         Ler mais
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                      </motion.button>
+                      </HierarchicalButton>
                     </div>
                   </div>
                 </CardContent>
@@ -160,20 +162,20 @@ const NewsSection = () => {
 
         {/* View All Button */}
         <motion.div
-          className="text-center mt-12"
+          className="flex justify-center mt-12 max-w-7xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <HierarchicalButton
+            hierarchy="tertiary"
+            size="lg"
+            icon={<ArrowRight className="h-5 w-5" />}
+            iconPosition="right"
           >
             Ver todas as notícias
-            <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </motion.button>
+          </HierarchicalButton>
         </motion.div>
       </div>
     </section>

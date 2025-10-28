@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { TestTube, Shield, HeartPulse, Baby, Zap, Users, Clock, Home, ArrowRight } from "lucide-react";
 import { CleanButton } from "@/components/ui/clean-button";
+import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 
 const servicesData = [
   {
@@ -346,13 +347,14 @@ const HybridBentoSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <CleanButton
+            <HierarchicalButton
+              hierarchy="primary"
               size="lg"
               icon={<ArrowRight className="w-5 h-5" />}
-              className="bg-gradient-to-r from-primary to-accent text-white border-0 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
+              iconPosition="right"
             >
               Ver todos os exames
-            </CleanButton>
+            </HierarchicalButton>
           </motion.div>
         </div>
       </div>

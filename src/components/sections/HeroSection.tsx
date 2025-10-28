@@ -4,6 +4,7 @@ import { CleanButton } from "@/components/ui/clean-button";
 import { SlideButton } from "@/components/ui/slide-button";
 import { MinimalButton } from "@/components/ui/minimal-button";
 import { GlowBadge } from "@/components/ui/glow-badge";
+import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 
 const HeroSection = () => {
   return (
@@ -112,21 +113,29 @@ const HeroSection = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
-              <SlideButton
-                direction="right"
+              <HierarchicalButton
+                hierarchy="primary"
+                size="lg"
                 icon={<ArrowRight className="w-4 h-4" />}
-                className="bg-accent hover:bg-accent/90 text-white w-full sm:w-auto"
+                iconPosition="right"
+                fullWidth={true}
+                className="sm:w-auto"
+                onClick={() => window.open('https://api.whatsapp.com/send?phone=557530300030&text=Ol%C3%A1.%20Vim%20atrav%C3%A9s%20do%20site%20e%20desejo%20agendar%20um%20atendimento.', '_blank')}
               >
                 Acelere seu atendimento
-              </SlideButton>
+              </HierarchicalButton>
 
-              <MinimalButton
-                variant="secondary"
+              <HierarchicalButton
+                hierarchy="tertiary"
+                size="lg"
                 icon={<MapPin className="w-4 h-4" />}
-                className="w-full sm:w-auto"
+                iconPosition="left"
+                fullWidth={true}
+                className="sm:w-auto"
+                onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Conheça nossas unidades
-              </MinimalButton>
+              </HierarchicalButton>
             </div>
 
             {/* Patient Avatars */}
@@ -154,7 +163,7 @@ const HeroSection = () => {
                 />
               </div>
               <p className="text-muted-foreground text-xs sm:text-sm lg:text-[13px] leading-relaxed lg:leading-[28.8px] text-center sm:text-left pl-0 sm:pl-[10px]">
-                Mais de 10 mil pacientes confiam na gente todos os meses.
+                Mais de 5 mil pacientes confiam na gente todos os meses.
               </p>
             </div>
           </motion.div>
@@ -176,7 +185,7 @@ const HeroSection = () => {
               >
                 <img
                   src="/assets/unidade.jpg"
-                  alt="Fachada do Laboratório Lapac"
+                  alt="Fachada do Laboratório Anacli"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -198,7 +207,7 @@ const HeroSection = () => {
 
                 <div className="relative z-10 text-center">
                   <div className="mb-6">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-2xl flex items-center justify-center backdrop-blur-sm">
                       <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
@@ -212,14 +221,16 @@ const HeroSection = () => {
                   </div>
 
                   <div className="flex justify-center">
-                    <CleanButton
-                      variant="outline"
+                    <HierarchicalButton
+                      hierarchy="secondary"
                       size="md"
                       icon={<ArrowRight className="w-4 h-4" />}
-                      className="bg-white text-accent border-white hover:bg-accent hover:text-white"
+                      iconPosition="right"
+                      className="bg-white text-accent hover:bg-primary hover:text-white focus:ring-accent"
+                      onClick={() => window.open("http://anacli.ddns.com.br:8090/web_laudos/login.asp")}
                     >
                       Entrar no Portal
-                    </CleanButton>
+                    </HierarchicalButton>
                   </div>
                 </div>
               </motion.div>
@@ -231,10 +242,17 @@ const HeroSection = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
+              {/* Imagem Mobile */}
+              <img
+                src="/assets/teste-mobile.png"
+                alt="Promo Anacli Mobile"
+                className="w-full h-full object-cover lg:hidden"
+              />
+              {/* Imagem Desktop */}
               <img
                 src="/assets/teste.png"
-                alt="Interior do Laboratório Lapac"
-                className="w-full h-full object-cover"
+                alt="Promo Anacli Desktop"
+                className="w-full h-full object-cover hidden lg:block"
               />
             </motion.div>
           </motion.div>
