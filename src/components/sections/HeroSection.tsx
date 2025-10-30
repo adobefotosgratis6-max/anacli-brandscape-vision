@@ -199,7 +199,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.3 }}
               >
                 <OptimizedImage
-                  src="/assets/unidade.jpg"
+                  src="/assets/unidade.avif"
                   alt="Fachada do Laboratório Anacli"
                   className="w-full h-full object-cover"
                   width={342}
@@ -262,7 +262,7 @@ const HeroSection = () => {
             >
               {/* Imagem Mobile */}
               <OptimizedImage
-                src="/assets/teste-mobile.png"
+                src="/assets/teste-mobile.avif"
                 alt="Promo Anacli Mobile"
                 className="w-full h-full object-cover lg:hidden"
                 width={343}
@@ -271,7 +271,7 @@ const HeroSection = () => {
               />
               {/* Imagem Desktop */}
               <OptimizedImage
-                src="/assets/teste.png"
+                src="/assets/teste.avif"
                 alt="Promo Anacli Desktop"
                 className="w-full h-full object-cover hidden lg:block"
                 width={343}
