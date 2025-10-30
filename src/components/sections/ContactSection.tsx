@@ -1,3 +1,5 @@
+'use client';
+
 import { MapPin, Phone, Mail, Clock, Map } from "lucide-react";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";

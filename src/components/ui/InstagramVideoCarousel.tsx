@@ -20,6 +20,7 @@ interface VideoData {
 
 interface InstagramVideoCarouselProps {
   videos: VideoData[]
+  title?: string
   subtitle?: string
   instagramUrl?: string
   onVideoClick?: (video: VideoData) => void
@@ -27,6 +28,7 @@ interface InstagramVideoCarouselProps {
 
 const InstagramVideoCarousel = ({
   videos,
+  title = "Siga @lab_anacli",
   subtitle = "Acompanhe nosso dia a dia e fique por dentro das novidades.",
   instagramUrl = "https://instagram.com/lab_anacli",
   onVideoClick

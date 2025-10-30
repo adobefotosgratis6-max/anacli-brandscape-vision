@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from "framer-motion";
 import Marquee from "@/components/ui/marquee";
 import { CleanButton } from "@/components/ui/clean-button";

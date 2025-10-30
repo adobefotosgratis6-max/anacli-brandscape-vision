@@ -1,33 +1,61 @@
-import { ImgHTMLAttributes } from 'react';
+import Image from 'next/image';
 
-interface OptimizedImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> {
+interface OptimizedImageProps {
   src: string;
   alt: string;
   className?: string;
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   priority?: boolean;
+  fill?: boolean;
+  sizes?: string;
+  quality?: number;
 }
 
-const OptimizedImage = ({ src, alt, className, width, height, priority, ...props }: OptimizedImageProps) => {
-  // Remove a extensão do arquivo para criar os caminhos das versões otimizadas
-  const basePath = src.replace(/\.(png|jpg|jpeg)$/i, '');
-  
-  return (
-    <picture>
-      <source srcSet={`${basePath}.avif`} type="image/avif" />
-      <source srcSet={`${basePath}.webp`} type="image/webp" />
-      <img
-        src={src}
+const OptimizedImage = ({ 
+  src, 
+  alt, 
+  className, 
+  width, 
+  height, 
+  priority = false,
+  fill = false,
+  sizes,
+  quality = 85,
+  ...props 
+}: OptimizedImageProps) => {
+  // Para imagens locais, remove a extensão e deixa o Next.js otimizar
+  const optimizedSrc = src.startsWith('/assets/') 
+    ? src.replace(/\.(png|jpg|jpeg)$/i, '.avif')
+    : src;
+
+  if (fill) {
+    return (
+      <Image
+        src={optimizedSrc}
         alt={alt}
+        fill
         className={className}
-        width={width}
-        height={height}
-        loading={priority ? "eager" : "lazy"}
-        decoding="async"
+        priority={priority}
+        sizes={sizes || '100vw'}
+        quality={quality}
         {...props}
       />
-    </picture>
+    );
+  }
+
+  return (
+    <Image
+      src={optimizedSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      priority={priority}
+      sizes={sizes}
+      quality={quality}
+      {...props}
+    />
   );
 };
 

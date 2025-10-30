@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HierarchicalButton } from "@/components/ui/hierarchical-button";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
@@ -110,10 +111,13 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              <img
+              <OptimizedImage
                 src="/assets/logo.svg"
                 alt="Anacli Laboratorial"
+                width={120}
+                height={40}
                 className="h-8 md:h-10 w-auto"
+                priority={true}
               />
               <div className="flex flex-col">
                 <span className="text-xs tracking-wide text-black/60 hidden sm:block select-none">

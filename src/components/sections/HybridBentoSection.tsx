@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from "framer-motion";
 import { TestTube, Shield, HeartPulse, Baby, Zap, Users, Clock, Home, ArrowRight } from "lucide-react";
 import { CleanButton } from "@/components/ui/clean-button";

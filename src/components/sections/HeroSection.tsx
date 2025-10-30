@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { GlowBadge } from "@/components/ui/glow-badge";
@@ -142,25 +144,37 @@ const HeroSection = () => {
             {/* Patient Avatars */}
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-6 sm:pt-8 lg:pt-[30px]">
               <div className="flex -space-x-2">
-                <img
+                <OptimizedImage
                   src="https://lh3.googleusercontent.com/a-/ALV-UjXEvoW_jJDs7mwp2VvjQJtBXA_SC-bdffW6BBIrFO6BpnbbAmFvOA=w72-h72-p-rp-mo-ba4-br100"
                   alt="Paciente satisfeita"
+                  width={50}
+                  height={50}
                   className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full border-2 sm:border-[3px] border-white object-cover"
+                  priority={false}
                 />
-                <img
+                <OptimizedImage
                   src="https://lh3.googleusercontent.com/a-/ALV-UjVoYenF9K2XQjdCFkPcmxzgiM13GqCNx-v-84udsxRQFapUCOwz7w=w72-h72-p-rp-mo-br100"
                   alt="Paciente satisfeito"
+                  width={50}
+                  height={50}
                   className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full border-2 sm:border-[3px] border-white object-cover"
+                  priority={false}
                 />
-                <img
+                <OptimizedImage
                   src="https://lh3.googleusercontent.com/a-/ALV-UjUwUhvZsF1k5SKuEIRiXKP2rGogV86D1GaIHHR_ndYIS_K-73O2vA=w72-h72-p-rp-mo-ba3-br100"
                   alt="Paciente satisfeita"
+                  width={50}
+                  height={50}
                   className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full border-2 sm:border-[3px] border-white object-cover"
+                  priority={false}
                 />
-                <img
+                <OptimizedImage
                   src="https://lh3.googleusercontent.com/a-/ALV-UjV5jxMHA_6HsEhLUyaB3AuaRhMb9vTJfYkAl3zm2Ua5AVlX1GcaUg=w72-h72-p-rp-mo-br100"
                   alt="Paciente satisfeito"
+                  width={50}
+                  height={50}
                   className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full border-2 sm:border-[3px] border-white object-cover"
+                  priority={false}
                 />
               </div>
               <p className="text-muted-foreground text-xs sm:text-sm lg:text-[13px] leading-relaxed lg:leading-[28.8px] text-center sm:text-left pl-0 sm:pl-[10px]">

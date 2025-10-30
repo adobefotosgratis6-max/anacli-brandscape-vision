@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react"
 import { VideoModal } from "@/components/ui/video-modal" // Certifique-se que este caminho está correto
 import InstagramVideoCarousel from "@/components/ui/InstagramVideoCarousel"

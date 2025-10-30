@@ -1,3 +1,5 @@
+'use client';
+
 import { Phone, MapPin, ArrowRight, Mail } from "lucide-react";
 import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 
