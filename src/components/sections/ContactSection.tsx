@@ -197,6 +197,8 @@ const ContactSection = () => {
                     src={location.image}
                     alt={location.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    width={400}
+                    height={128}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>

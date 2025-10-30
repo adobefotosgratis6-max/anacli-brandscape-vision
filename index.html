@@ -13,10 +13,19 @@
   <meta name="description"
     content="Laboratório de análises clínicas em Feira de Santana - BA. Mais de 20 anos de experiência, tecnologia de ponta e atendimento humanizado. Exames laboratoriais, toxicológicos e check-ups." />
   <meta name="author" content="Anacli Laboratorial" />
+  <!-- Preconnect para recursos críticos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://scontent-bsb1-1.cdninstagram.com" crossorigin>
+  
+  <!-- Preload recursos críticos -->
+  <link rel="preload" href="/assets/unidade.avif" as="image" type="image/avif">
+  <link rel="preload" href="/assets/teste.avif" as="image" type="image/avif" media="(min-width: 1024px)">
+  <link rel="preload" href="/assets/teste-mobile.avif" as="image" type="image/avif" media="(max-width: 1023px)">
+  
+  <!-- Carregamento otimizado de fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
   <meta property="og:title" content="Anacli Laboratorial - Excelência em Análises Clínicas" />
   <meta property="og:description"

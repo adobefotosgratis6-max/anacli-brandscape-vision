@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { GlowBadge } from "@/components/ui/glow-badge";
 import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 import OptimizedImage from "@/components/ui/OptimizedImage";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const HeroSection = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-primary/5 to-secondary/10 rounded-b-[20px] md:rounded-b-[40px] lg:rounded-b-[128px]">
       {/* Background with glow effect */}
@@ -185,6 +188,9 @@ const HeroSection = () => {
                   src="/assets/unidade.jpg"
                   alt="Fachada do Laboratório Anacli"
                   className="w-full h-full object-cover"
+                  width={342}
+                  height={340}
+                  priority={true}
                 />
               </motion.div>
 
@@ -245,12 +251,18 @@ const HeroSection = () => {
                 src="/assets/teste-mobile.png"
                 alt="Promo Anacli Mobile"
                 className="w-full h-full object-cover lg:hidden"
+                width={343}
+                height={400}
+                priority={true}
               />
               {/* Imagem Desktop */}
               <OptimizedImage
                 src="/assets/teste.png"
                 alt="Promo Anacli Desktop"
                 className="w-full h-full object-cover hidden lg:block"
+                width={343}
+                height={650}
+                priority={true}
               />
             </motion.div>
           </motion.div>

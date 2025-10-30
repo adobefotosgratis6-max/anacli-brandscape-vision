@@ -96,6 +96,10 @@ const ConveniosSection = () => {
                     src={convenio.logo}
                     alt={`Logo ${convenio.name}`}
                     className="h-12 sm:h-32 w-auto max-w-[80px] sm:max-w-[180px] object-contain transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-105"
+                    width={180}
+                    height={128}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/120x24/E5E7EB/6B7280?text=${convenio.name.replace(' ', '+')}`;
@@ -135,6 +139,10 @@ const ConveniosSection = () => {
                     src={convenio.logo}
                     alt={`Logo ${convenio.name}`}
                     className="h-12 sm:h-32 w-auto max-w-[80px] sm:max-w-[180px] object-contain transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-105"
+                    width={180}
+                    height={128}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/120x24/E5E7EB/6B7280?text=${convenio.name.replace(' ', '+')}`;
