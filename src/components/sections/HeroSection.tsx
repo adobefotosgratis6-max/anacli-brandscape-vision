@@ -1,10 +1,8 @@
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { CleanButton } from "@/components/ui/clean-button";
-import { SlideButton } from "@/components/ui/slide-button";
-import { MinimalButton } from "@/components/ui/minimal-button";
 import { GlowBadge } from "@/components/ui/glow-badge";
 import { HierarchicalButton } from "@/components/ui/hierarchical-button";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 const HeroSection = () => {
   return (
@@ -183,7 +181,7 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <img
+                <OptimizedImage
                   src="/assets/unidade.jpg"
                   alt="Fachada do Laboratório Anacli"
                   className="w-full h-full object-cover"
@@ -243,13 +241,13 @@ const HeroSection = () => {
               transition={{ duration: 0.3 }}
             >
               {/* Imagem Mobile */}
-              <img
+              <OptimizedImage
                 src="/assets/teste-mobile.png"
                 alt="Promo Anacli Mobile"
                 className="w-full h-full object-cover lg:hidden"
               />
               {/* Imagem Desktop */}
-              <img
+              <OptimizedImage
                 src="/assets/teste.png"
                 alt="Promo Anacli Desktop"
                 className="w-full h-full object-cover hidden lg:block"

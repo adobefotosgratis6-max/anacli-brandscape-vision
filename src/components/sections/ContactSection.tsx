@@ -2,6 +2,7 @@ import { MapPin, Phone, Mail, Clock, Map } from "lucide-react";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { HierarchicalButton } from "@/components/ui/hierarchical-button";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 // WhatsApp Icon Component
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -192,7 +193,7 @@ const ContactSection = () => {
               <div className="bg-white rounded-2xl border border-gray-200 hover:border-primary transition-all duration-300 overflow-hidden">
                 {/* Unit Image */}
                 <div className="relative h-32 overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={location.image}
                     alt={location.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
