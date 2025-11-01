@@ -1,3 +1,9 @@
+# Resource hints para otimização de performance
+/*
+  Link: <https://fonts.googleapis.com>; rel=preconnect
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+  Link: <https://scontent-bsb1-1.cdninstagram.com>; rel=preconnect; crossorigin
+
 # Cache para imagens
 /assets/*.avif
   Cache-Control: public, max-age=31536000, immutable
@@ -12,7 +18,11 @@
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Cache para JS e CSS
+# Cache para JS e CSS com hash
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache para CSS e JS
 /assets/*.js
   Cache-Control: public, max-age=31536000, immutable
 

@@ -67,8 +67,18 @@ const nextConfig = {
             name: 'vendors',
             chunks: 'all',
           },
+          // Separar CSS em chunks menores
+          styles: {
+            name: 'styles',
+            test: /\.(css|scss|sass)$/,
+            chunks: 'all',
+            enforce: true,
+          },
         },
       }
+      
+      // Otimizar CSS
+      config.optimization.minimize = true
     }
     return config
   },

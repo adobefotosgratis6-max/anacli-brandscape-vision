@@ -1,6 +1,3 @@
-/* Import Swiper custom styles */
-@import '../styles/swiper-custom.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -130,6 +127,40 @@ All colors MUST be HSL.
   .animate-slide-in-right {
     animation: slideInRight 0.6s ease-out forwards;
   }
+}
+
+/* Swiper Custom Styles - Inline para evitar render blocking */
+.instagram-carousel {
+  overflow: visible !important;
+  padding-bottom: 20px;
+}
+
+.instagram-carousel .swiper-wrapper {
+  align-items: stretch;
+}
+
+.instagram-carousel .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.instagram-carousel .swiper-button-next,
+.instagram-carousel .swiper-button-prev {
+  display: none;
+}
+
+.instagram-carousel .swiper-pagination {
+  bottom: -10px;
+}
+
+.instagram-carousel .swiper-pagination-bullet {
+  background: rgba(166, 192, 34, 0.3);
+  opacity: 1;
+}
+
+.instagram-carousel .swiper-pagination-bullet-active {
+  background: #A6C022;
 }
 
 /* Keyframe animations */

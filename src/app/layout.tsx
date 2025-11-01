@@ -4,9 +4,11 @@ import './globals.css'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'], // Reduzido para apenas pesos essenciais
   display: 'swap',
   preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
+  adjustFontFallback: true, // Ajusta métricas da fonte fallback
 })
 
 export const metadata: Metadata = {
@@ -48,6 +50,18 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={plusJakartaSans.className}>
       <head>
+        {/* Critical CSS inline para evitar render blocking */}
+        <style dangerouslySetInnerHTML={{__html: `
+          :root{--background:0 0% 100%;--foreground:0 0% 15%;--primary:68 68% 45%;--primary-foreground:0 0% 100%}
+          *{box-sizing:border-box}
+          body{margin:0;background:hsl(var(--background));color:hsl(var(--foreground));font-family:system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+          .min-h-screen{min-height:100vh}
+        `}} />
+        
+        {/* Pré-conexão com Google Fonts para Plus Jakarta Sans */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* Pré-conexão com CDN do Instagram */}
         <link rel="preconnect" href="https://scontent-bsb1-1.cdninstagram.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://scontent-bsb1-1.cdninstagram.com" />
