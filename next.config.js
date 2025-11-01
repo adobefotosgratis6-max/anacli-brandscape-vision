@@ -41,7 +41,6 @@ const nextConfig = {
       'swiper/react',
       'swiper/modules'
     ],
-    optimizeCss: true,
     turbo: {
       rules: {
         '*.svg': {
