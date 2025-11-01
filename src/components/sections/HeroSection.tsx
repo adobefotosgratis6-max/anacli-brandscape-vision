@@ -72,9 +72,9 @@ const HeroSection = () => {
           {/* Left Content */}
           <motion.div
             className="space-y-6 sm:space-y-8 max-w-full lg:max-w-[585px] text-center lg:text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={shouldAnimate ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
+            animate={shouldAnimate ? { opacity: 1, x: 0 } : undefined}
+            transition={shouldAnimate ? { duration: 0.8, ease: "easeOut" } : undefined}
           >
             {/* Welcome Text */}
             <div className="space-y-4 sm:space-y-6">
@@ -86,9 +86,9 @@ const HeroSection = () => {
 
               <motion.h1
                 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                initial={shouldAnimate ? { opacity: 0, scale: 0.9 } : { opacity: 1, scale: 1 }}
+                whileInView={shouldAnimate ? { opacity: 1, scale: 1 } : undefined}
+                transition={shouldAnimate ? { duration: 0.8, delay: 0.2 } : undefined}
                 viewport={{ once: true }}
               >
                 Compromisso
@@ -186,9 +186,9 @@ const HeroSection = () => {
           {/* Right Content - Cards */}
           <motion.div
             className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-[30px] items-center lg:items-start w-full"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            initial={shouldAnimate ? { opacity: 0, x: 50 } : { opacity: 1, x: 0 }}
+            animate={shouldAnimate ? { opacity: 1, x: 0 } : undefined}
+            transition={shouldAnimate ? { duration: 0.8, delay: 0.2, ease: "easeOut" } : undefined}
           >
             {/* Left Column */}
             <div className="flex flex-col gap-4 sm:gap-6 lg:gap-[30px] w-full lg:w-[341.98px]">
