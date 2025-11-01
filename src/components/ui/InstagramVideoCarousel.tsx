@@ -104,7 +104,7 @@ const InstagramVideoCarousel = ({
               icon={<ChevronLeft className="w-6 h-6" />}
               onClick={handlePrevClick}
               disabled={isBeginning}
-              className="w-14 h-14 rounded-full p-0"
+              className="w-14 h-14 rounded-full p-0 active:!bg-accent active:!text-white active:!border-accent"
             >
               <span className="sr-only">Anterior</span>
             </HierarchicalButton>
@@ -115,7 +115,7 @@ const InstagramVideoCarousel = ({
               icon={<ChevronRight className="w-6 h-6" />}
               onClick={handleNextClick}
               disabled={isEnd}
-              className="w-14 h-14 rounded-full p-0"
+              className="w-14 h-14 rounded-full p-0 active:!bg-accent active:!text-white active:!border-accent"
             >
               <span className="sr-only">Próximo</span>
             </HierarchicalButton>

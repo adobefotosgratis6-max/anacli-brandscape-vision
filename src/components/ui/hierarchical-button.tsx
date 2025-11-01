@@ -33,27 +33,37 @@ const  HierarchicalButton = React.forwardRef<HTMLButtonElement, HierarchicalButt
     fullWidth,
     ...props
   }, ref) => {
-    const baseClasses = "relative overflow-hidden font-semibold transition-all duration-300 flex items-center justify-center gap-2 group focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+    // Detecta se é mobile para desabilitar animações do Framer Motion
+    const [isMobile, setIsMobile] = React.useState(false);
+    
+    React.useEffect(() => {
+      setIsMobile(window.innerWidth <= 768);
+      const handleResize = () => setIsMobile(window.innerWidth <= 768);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    
+    const baseClasses = "relative overflow-hidden font-semibold transition-all duration-300 flex items-center justify-center gap-2 group focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 touch-manipulation whitespace-nowrap";
 
     // Hierarquia de importância com cores e estilos específicos da Anacli
     const hierarchies = {
       // Botão mais importante - Ações principais (CTA, Agendar, Contatar)
       primary: "bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-lg hover:shadow-xl hover:shadow-primary/25 focus:ring-primary border-0",
 
-      // Botão secundário - Ações importantes mas não críticas (Ver mais, Localização)
-      secondary: "bg-accent hover:bg-primary/90 text-white shadow-md hover:shadow-lg focus:ring-primary border-0",
+      // Botão secundário - Ações importantes mas não críticas (Ver mais, Localização) - Hover/Active inverte cores
+      secondary: "bg-accent hover:bg-white active:!bg-white text-white hover:text-accent active:!text-accent border border-accent hover:border-accent active:!border-accent shadow-md hover:shadow-lg focus:ring-primary transition-colors duration-150",
 
-      // Botão terciário - Ações de apoio (Links, navegação) - Hover com fundo magenta e texto branco
-      tertiary: "bg-white hover:bg-accent text-accent hover:text-white border border-accent/40 hover:border-accent focus:ring-accent shadow-sm hover:shadow-md transition-colors duration-300",
+      // Botão terciário - Ações de apoio (Links, navegação) - Hover/Active com fundo magenta e texto branco
+      tertiary: "bg-white hover:bg-accent active:!bg-accent text-accent hover:text-white active:!text-white border border-accent/40 hover:border-accent active:!border-accent focus:ring-accent shadow-sm hover:shadow-md transition-colors duration-150",
 
-      // Botão fantasma - Ações sutis (Ler mais, links internos) - Hover com fundo magenta e texto branco
-      ghost: "bg-transparent hover:bg-accent text-accent hover:text-white border-0 focus:ring-accent transition-colors duration-300"
+      // Botão fantasma - Ações sutis (Ler mais, links internos) - Hover/Active com fundo magenta e texto branco
+      ghost: "bg-transparent hover:bg-accent active:!bg-accent text-accent hover:text-white active:!text-white border-0 focus:ring-accent transition-colors duration-150"
     };
 
     const sizes = {
       sm: "px-4 py-2 text-sm rounded-lg min-h-[36px]",
       md: "px-6 py-3 text-base rounded-xl min-h-[44px]",
-      lg: "px-8 py-4 text-lg rounded-2xl min-h-[52px]"
+      lg: "px-8 py-4 text-base md:text-lg rounded-xl md:rounded-2xl min-h-[48px] md:min-h-[52px]"
     };
 
     const getHoverAnimation = () => {
@@ -71,6 +81,32 @@ const  HierarchicalButton = React.forwardRef<HTMLButtonElement, HierarchicalButt
       }
     };
 
+    const handleTouchStart = (e: React.TouchEvent<HTMLButtonElement>) => {
+      if (disabled || loading) return;
+      const button = e.currentTarget;
+      
+      // Força as classes de active
+      if (hierarchy === 'tertiary' || hierarchy === 'ghost') {
+        button.style.backgroundColor = 'hsl(335 100% 50%)';
+        button.style.color = 'white';
+        button.style.borderColor = 'hsl(335 100% 50%)';
+      } else if (hierarchy === 'secondary') {
+        button.style.backgroundColor = 'white';
+        button.style.color = 'hsl(335 100% 50%)';
+        button.style.borderColor = 'hsl(335 100% 50%)';
+      }
+    };
+    
+    const handleTouchEnd = (e: React.TouchEvent<HTMLButtonElement>) => {
+      if (disabled || loading) return;
+      const button = e.currentTarget;
+      
+      // Remove os estilos inline para voltar ao normal
+      button.style.backgroundColor = '';
+      button.style.color = '';
+      button.style.borderColor = '';
+    };
+
     return (
       <motion.button
         ref={ref}
@@ -81,10 +117,12 @@ const  HierarchicalButton = React.forwardRef<HTMLButtonElement, HierarchicalButt
           fullWidth && "w-full",
           className
         )}
-        whileHover={!disabled && !loading ? getHoverAnimation() : {}}
-        whileTap={!disabled && !loading ? { scale: 0.95 } : {}}
+        whileHover={!disabled && !loading && !isMobile ? getHoverAnimation() : undefined}
+        whileTap={!disabled && !loading && !isMobile ? { scale: 0.95 } : undefined}
         transition={{ duration: 0.2 }}
         onClick={onClick}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         disabled={disabled || loading}
         {...props}
       >

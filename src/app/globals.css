@@ -224,3 +224,26 @@ html {
     display: none !important;
   }
 }
+
+/* Mobile touch active states for buttons - FORÇA INVERSÃO DE CORES */
+button:active:not(:disabled):not(.bg-gradient-to-r) {
+  /* Tertiary/Ghost buttons - branco/transparente para magenta */
+  &.bg-white,
+  &.bg-transparent {
+    background-color: hsl(335 100% 50%) !important;
+    color: white !important;
+    border-color: hsl(335 100% 50%) !important;
+  }
+  
+  /* Secondary buttons - magenta para branco */
+  &.bg-accent {
+    background-color: white !important;
+    color: hsl(335 100% 50%) !important;
+    border-color: hsl(335 100% 50%) !important;
+  }
+}
+
+/* Força cor do ícone também */
+button:active:not(:disabled) svg {
+  color: inherit !important;
+}

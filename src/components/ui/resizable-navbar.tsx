@@ -181,11 +181,14 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
                 size="icon"
                 className="text-foreground hover:text-white transition-colors duration-300"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="h-5 w-5" />
+                  <X className="h-5 w-5" aria-hidden="true" />
                 ) : (
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-5 w-5" aria-hidden="true" />
                 )}
               </Button>
             </motion.div>
@@ -196,6 +199,7 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
+              id="mobile-menu"
               className="lg:hidden border-t border-b border-border/100 bg-white/95 backdrop-blur-md"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
