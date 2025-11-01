@@ -81,10 +81,10 @@ const InstagramVideoCarousel = ({
   }
 
   return (
-    <section className="bg-primary/5 py-20 overflow-x-hidden">
+    <section className="bg-primary/5 py-20">
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-center w-full">
         {/* Left Column */}
-        <div className="relative z-10 space-y-8 max-w-7xl mx-auto px-6 lg:px-0 lg:pl-[max(1.5rem,calc((100vw-80rem)/2))]">
+        <div className="space-y-8 max-w-7xl mx-auto px-6 lg:px-0 lg:pl-[max(1.5rem,calc((100vw-80rem)/2))]">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-gray-900">Siga </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
@@ -92,13 +92,8 @@ const InstagramVideoCarousel = ({
             </span>
           </h2>
 
-          <p className="text-sm text-red-500 leading-relaxed">
-            {subtitle.split('\n').map((line, index) => (
-              <span key={index}>
-                {line}
-                {index < subtitle.split('\n').length - 1 && <br />}
-              </span>
-            ))}
+          <p className="text-lg text-gray-600 leading-relaxed">
+            {subtitle}
           </p>
 
           {/* Navigation Buttons */}
@@ -138,8 +133,8 @@ const InstagramVideoCarousel = ({
           </HierarchicalButton>
         </div>
 
-        {/* Right Column */}
-        <div className="relative px-6 lg:px-0">
+        {/* Right Column - Overflow contido aqui */}
+        <div className="relative px-6 lg:px-0 overflow-x-hidden">
           <Swiper
             onSwiper={handleSwiperInit}
             onSlideChange={handleSlideChange}

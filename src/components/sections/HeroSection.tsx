@@ -194,7 +194,7 @@ const HeroSection = () => {
             <div className="flex flex-col gap-4 sm:gap-6 lg:gap-[30px] w-full lg:w-[341.98px]">
               {/* Lab Building Image Card */}
               <motion.div
-                className="h-[240px] sm:h-[300px] lg:h-[340px] w-full rounded-2xl lg:rounded-[20px] overflow-hidden shadow-xl lg:shadow-2xl relative"
+                className="h-[240px] sm:h-[300px] lg:h-[300px] w-full rounded-2xl lg:rounded-[20px] overflow-hidden shadow-xl lg:shadow-2xl relative"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
@@ -234,7 +234,7 @@ const HeroSection = () => {
                       Acesse seu resultado
                     </h3>
                     <p className="text-white/80 text-sm">
-                      Consulte seus exames de forma rápida e segura
+                      Seus exames de forma rápida e segura
                     </p>
                   </div>
 
@@ -247,7 +247,7 @@ const HeroSection = () => {
                       className="bg-white text-accent hover:bg-primary hover:text-white focus:ring-accent"
                       onClick={() => window.open("http://anacli.ddns.com.br:8090/web_laudos/login.asp")}
                     >
-                      Entrar no Portal
+                      Acessar
                     </HierarchicalButton>
                   </div>
                 </div>

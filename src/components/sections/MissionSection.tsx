@@ -181,55 +181,58 @@ const MissionSection = () => {
               </div>
             </motion.div>
 
-            {/* Card 2 - Satisfação - MÉDIO */}
-            <motion.div
-              className="md:col-span-1 group"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 backdrop-blur-sm rounded-3xl p-6 h-full flex flex-col justify-center border border-secondary/20 group-hover:border-secondary/30 transition-all duration-300 min-h-[140px]">
-                <div className="w-14 h-14 mb-4 rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors duration-300">
-                  <Shield className="w-7 h-7 text-secondary-foreground" />
+            {/* Container para Cards 2 e 3 - Lado a lado no mobile */}
+            <div className="grid grid-cols-2 gap-6 md:contents">
+              {/* Card 2 - Satisfação - MÉDIO */}
+              <motion.div
+                className="md:col-span-1 group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 backdrop-blur-sm rounded-3xl p-6 h-full flex flex-col justify-center border border-secondary/20 group-hover:border-secondary/30 transition-all duration-300 min-h-[140px]">
+                  <div className="w-14 h-14 mb-4 rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors duration-300">
+                    <Shield className="w-7 h-7 text-secondary-foreground" />
+                  </div>
+                  <div className="text-4xl font-bold text-secondary-foreground mb-2">
+                    95%
+                  </div>
+                  <div className="text-base font-semibold text-gray-900 mb-1">
+                    Satisfação
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Pacientes
+                  </div>
                 </div>
-                <div className="text-4xl font-bold text-secondary-foreground mb-2">
-                  95%
-                </div>
-                <div className="text-base font-semibold text-gray-900 mb-1">
-                  Satisfação
-                </div>
-                <div className="text-sm text-gray-600">
-                  Pacientes
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Card 3 - Anos de experiência - MÉDIO */}
-            <motion.div
-              className="md:col-span-1 group"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm rounded-3xl p-6 h-full flex flex-col justify-center border border-accent/20 group-hover:border-accent/30 transition-all duration-300 min-h-[140px]">
-                <div className="w-14 h-14 mb-4 rounded-2xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-300">
-                  <Award className="w-7 h-7 text-accent" />
+              {/* Card 3 - Anos de experiência - MÉDIO */}
+              <motion.div
+                className="md:col-span-1 group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                <div className="bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm rounded-3xl p-6 h-full flex flex-col justify-center border border-accent/20 group-hover:border-accent/30 transition-all duration-300 min-h-[140px]">
+                  <div className="w-14 h-14 mb-4 rounded-2xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-300">
+                    <Award className="w-7 h-7 text-accent" />
+                  </div>
+                  <div className="text-4xl font-bold text-accent mb-2">
+                    50+
+                  </div>
+                  <div className="text-base font-semibold text-gray-900 mb-1">
+                    Anos
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Experiência
+                  </div>
                 </div>
-                <div className="text-4xl font-bold text-accent mb-2">
-                  50+
-                </div>
-                <div className="text-base font-semibold text-gray-900 mb-1">
-                  Anos
-                </div>
-                <div className="text-sm text-gray-600">
-                  Experiência
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Card 4 - Tecnologia Avançada - LARGO (2x1) */}
             <motion.div

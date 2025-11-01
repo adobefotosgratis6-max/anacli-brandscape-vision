@@ -268,7 +268,7 @@ const ContactSection = () => {
                           iconPosition="left"
                           className="flex-1"
                         >
-                          Ver no Maps
+                          Ver local
                         </HierarchicalButton>
                       </DialogTrigger>
                       <DialogContent className="max-w-4xl w-full">
