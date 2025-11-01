@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { GlowBadge } from "@/components/ui/glow-badge";
 import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 import OptimizedImage from "@/components/ui/OptimizedImage";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useShouldAnimate } from "@/hooks/useReducedMotion";
 
 const HeroSection = () => {
-  const prefersReducedMotion = useReducedMotion();
+  const shouldAnimate = useShouldAnimate(); // Desktop = true, Mobile = false
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-primary/5 to-secondary/10 rounded-b-[20px] md:rounded-b-[40px] lg:rounded-b-[128px]">

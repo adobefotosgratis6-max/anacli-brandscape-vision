@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { HierarchicalButton } from "@/components/ui/hierarchical-button";
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import { cn } from "@/lib/utils";
+import { useShouldAnimate } from "@/hooks/useReducedMotion";
 
 interface NavItem {
   name: string;
@@ -31,6 +32,7 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const shouldAnimate = useShouldAnimate(); // Desktop = true, Mobile = false
 
   useEffect(() => {
     let ticking = false;
