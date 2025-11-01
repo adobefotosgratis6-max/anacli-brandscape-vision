@@ -36,14 +36,12 @@ const nextConfig = {
       'framer-motion', 
       'lucide-react', 
       '@radix-ui/react-dialog', 
-      '@radix-ui/react-slot',
+      '@radix-ui/react-toast',
       'swiper',
       'swiper/react',
-      'swiper/modules',
-      '@tanstack/react-query',
-      'date-fns',
-      'recharts'
+      'swiper/modules'
     ],
+    optimizeCss: true,
     turbo: {
       rules: {
         '*.svg': {

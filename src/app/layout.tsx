@@ -48,8 +48,16 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={plusJakartaSans.className}>
       <head>
+        {/* Pré-conexão com CDN do Instagram */}
         <link rel="preconnect" href="https://scontent-bsb1-1.cdninstagram.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://scontent-bsb1-1.cdninstagram.com" />
+        
+        {/* Preload de recursos críticos */}
+        <link rel="preload" href="/assets/logo.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/assets/unidade.avif" as="image" type="image/avif" />
+        
+        {/* Otimizações de performance */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         {children}
