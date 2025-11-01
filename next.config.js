@@ -3,7 +3,6 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
-  // Desabilitar polyfills para navegadores modernos
   reactStrictMode: true,
   images: {
     unoptimized: true, // Necessário para output: 'export'
@@ -43,52 +42,55 @@ const nextConfig = {
       'swiper/react',
       'swiper/modules'
     ],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
   },
-  compiler: {
-    // removeConsole não é suportado pelo Turbopack
-    // removeConsole: process.env.NODE_ENV === 'production',
-  },
-  // Remover polyfills desnecessários para navegadores modernos
-  swcMinify: true,
-  // Otimizações de build
+  // Otimizações de build para reduzir JavaScript legado
   webpack: (config, { dev, isServer }) => {
-    // Otimizações gerais de performance
     if (!dev) {
+      // Otimizar chunks
       config.optimization.splitChunks = {
         ...config.optimization.splitChunks,
+        chunks: 'all',
         cacheGroups: {
           ...config.optimization.splitChunks.cacheGroups,
+          // Separar vendors grandes
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
-            chunks: 'all',
+            priority: 10,
+            reuseExistingChunk: true,
           },
-          // Separar CSS em chunks menores
+          // Separar framer-motion
+          framerMotion: {
+            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+            name: 'framer-motion',
+            priority: 20,
+            reuseExistingChunk: true,
+          },
+          // Separar CSS
           styles: {
             name: 'styles',
             test: /\.(css|scss|sass)$/,
             chunks: 'all',
             enforce: true,
+            priority: 30,
           },
         },
       }
       
-      // Otimizar CSS
       config.optimization.minimize = true
+      
+      // Remover polyfills desnecessários
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      }
     }
     return config
   },
   poweredByHeader: false,
   compress: true,
-  swcMinify: true,
 }
 
 module.exports = nextConfig

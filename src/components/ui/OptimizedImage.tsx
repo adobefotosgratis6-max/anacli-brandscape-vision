@@ -10,6 +10,7 @@ interface OptimizedImageProps {
   fill?: boolean;
   sizes?: string;
   quality?: number;
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 const OptimizedImage = ({ 
@@ -22,6 +23,7 @@ const OptimizedImage = ({
   fill = false,
   sizes,
   quality = 85,
+  fetchPriority = 'auto',
   ...props 
 }: OptimizedImageProps) => {
   // Para imagens locais, remove a extensão e deixa o Next.js otimizar
@@ -39,6 +41,7 @@ const OptimizedImage = ({
         priority={priority}
         sizes={sizes || '100vw'}
         quality={quality}
+        fetchPriority={fetchPriority}
         {...props}
       />
     );
@@ -54,6 +57,7 @@ const OptimizedImage = ({
       priority={priority}
       sizes={sizes}
       quality={quality}
+      fetchPriority={fetchPriority}
       {...props}
     />
   );

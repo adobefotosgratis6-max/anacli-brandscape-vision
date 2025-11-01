@@ -192,12 +192,8 @@ const HeroSection = () => {
           >
             {/* Left Column */}
             <div className="flex flex-col gap-4 sm:gap-6 lg:gap-[30px] w-full lg:w-[341.98px]">
-              {/* Lab Building Image Card */}
-              <motion.div
-                className="h-[240px] sm:h-[300px] lg:h-[300px] w-full rounded-2xl lg:rounded-[20px] overflow-hidden shadow-xl lg:shadow-2xl relative"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
+              {/* Lab Building Image Card - LCP Element */}
+              <div className="h-[240px] sm:h-[300px] lg:h-[300px] w-full rounded-2xl lg:rounded-[20px] overflow-hidden shadow-xl lg:shadow-2xl relative">
                 <OptimizedImage
                   src="/assets/unidade.avif"
                   alt="Fachada do Laboratório Anacli"
@@ -205,8 +201,9 @@ const HeroSection = () => {
                   width={342}
                   height={340}
                   priority={true}
+                  fetchPriority="high"
                 />
-              </motion.div>
+              </div>
 
               {/* Results Access Card */}
               <motion.div
@@ -254,13 +251,9 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Right Column - Interior Card */}
-            <motion.div
-              className="w-full lg:w-[343.02px] h-[300px] sm:h-[400px] lg:min-h-[650px] rounded-2xl lg:rounded-[20px] overflow-hidden shadow-xl lg:shadow-2xl relative"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Imagem Mobile */}
+            {/* Right Column - Interior Card - LCP Element Mobile */}
+            <div className="w-full lg:w-[343.02px] h-[300px] sm:h-[400px] lg:min-h-[650px] rounded-2xl lg:rounded-[20px] overflow-hidden shadow-xl lg:shadow-2xl relative">
+              {/* Imagem Mobile - LCP Priority */}
               <OptimizedImage
                 src="/assets/teste-mobile.avif"
                 alt="Promo Anacli Mobile"
@@ -268,6 +261,7 @@ const HeroSection = () => {
                 width={343}
                 height={400}
                 priority={true}
+                fetchPriority="high"
               />
               {/* Imagem Desktop */}
               <OptimizedImage
@@ -277,8 +271,9 @@ const HeroSection = () => {
                 width={343}
                 height={650}
                 priority={true}
+                fetchPriority="high"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
