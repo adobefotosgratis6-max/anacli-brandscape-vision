@@ -58,11 +58,6 @@ const nextConfig = {
   },
   // Remover polyfills desnecessários para navegadores modernos
   swcMinify: true,
-  modularizeImports: {
-    'framer-motion': {
-      transform: 'framer-motion/dist/es/{{member}}',
-    },
-  },
   // Otimizações de build
   webpack: (config, { dev, isServer }) => {
     // Otimizações gerais de performance

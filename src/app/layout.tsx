@@ -52,17 +52,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={plusJakartaSans.className}>
       <head>
         {/* Critical CSS inline para evitar render blocking */}
-        <style dangerouslySetInnerHTML={{__html: `
-          :root{--background:0 0% 100%;--foreground:0 0% 15%;--primary:68 68% 45%;--primary-foreground:0 0% 100%;--accent:335 100% 50%;--radius:0.75rem}
-          *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:hsl(0 0% 90%)}
-          html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4;font-family:system-ui,-apple-system,sans-serif}
-          body{margin:0;line-height:inherit;background:hsl(var(--background));color:hsl(var(--foreground));-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-          .min-h-screen{min-height:100vh}
-          img,video{max-width:100%;height:auto;content-visibility:auto}
-          button{cursor:pointer}
-          a{color:inherit;text-decoration:inherit}
-          h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}
-        `}} />
+        <style dangerouslySetInnerHTML={{__html: `:root{--background:0 0% 100%;--foreground:0 0% 15%;--primary:68 68% 45%;--primary-foreground:0 0% 100%;--accent:335 100% 50%;--radius:0.75rem}*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:hsl(0 0% 90%)}html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4;font-family:system-ui,-apple-system,sans-serif}body{margin:0;line-height:inherit;background:hsl(var(--background));color:hsl(var(--foreground));-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.min-h-screen{min-height:100vh}img,video{max-width:100%;height:auto}button{cursor:pointer}a{color:inherit;text-decoration:inherit}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}`}} />
         
         {/* Pré-conexão com Google Fonts para Plus Jakarta Sans */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
