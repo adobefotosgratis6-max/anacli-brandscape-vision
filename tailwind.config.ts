@@ -12,6 +12,14 @@ export default {
     "!./dist/**/*"
   ],
   prefix: "",
+  // Otimizações de performance
+  future: {
+    hoverOnlyWhenSupported: true, // Hover apenas em dispositivos que suportam
+  },
+  corePlugins: {
+    // Desabilitar plugins não utilizados para reduzir CSS
+    preflight: true, // Manter reset CSS
+  },
   theme: {
     container: {
       center: true,

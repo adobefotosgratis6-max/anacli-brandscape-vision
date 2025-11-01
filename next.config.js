@@ -3,6 +3,8 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
+  // Desabilitar polyfills para navegadores modernos
+  reactStrictMode: true,
   images: {
     unoptimized: true, // Necessário para output: 'export'
     formats: ['image/avif', 'image/webp'],
@@ -53,6 +55,13 @@ const nextConfig = {
   compiler: {
     // removeConsole não é suportado pelo Turbopack
     // removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Remover polyfills desnecessários para navegadores modernos
+  swcMinify: true,
+  modularizeImports: {
+    'framer-motion': {
+      transform: 'framer-motion/dist/es/{{member}}',
+    },
   },
   // Otimizações de build
   webpack: (config, { dev, isServer }) => {

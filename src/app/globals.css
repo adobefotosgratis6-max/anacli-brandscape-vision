@@ -1,6 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer base, components, utilities;
+
+@layer base {
+  @tailwind base;
+}
+
+@layer components {
+  @tailwind components;
+}
+
+@layer utilities {
+  @tailwind utilities;
+}
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.

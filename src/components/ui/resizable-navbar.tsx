@@ -33,23 +33,42 @@ const ResizableNavbar: React.FC<ResizableNavbarProps> = ({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    let lastScrollY = 0;
+
+    // Otimizado com requestAnimationFrame para evitar refluxo forçado
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      lastScrollY = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(lastScrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
+    // Debounce do resize para evitar múltiplas execuções
+    let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        setIsMobile(window.innerWidth < 768);
+      }, 150);
     };
 
     // Initial check
-    handleResize();
+    setIsMobile(window.innerWidth < 768);
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
+    // Usar passive listeners para melhor performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimeout);
     };
   }, []);
 
